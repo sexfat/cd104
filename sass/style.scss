@@ -75,27 +75,116 @@ body {
 
 
 
-@mixin btn($colorName,$bgcolor ,$borderradius:null , $width:null) {
-    .btn-#{$colorName}{
+@mixin btn($colorName, $bgcolor, $borderradius:null, $width:null) {
+    .btn-#{$colorName} {
         width: $width;
         height: 30px;
         text-align: center;
         padding: 10px;
         cursor: pointer;
-        background-color:$bgcolor;
+        background-color: $bgcolor;
         @include margincenter();
         @include fontSize (20px);
         border-radius: $borderradius;
+        transition: .3s all ease-in-out;
+
+        // darken(#800, 20%)
+        &:hover {
+            background-color: lighten($bgcolor, 20%);
+        }
+
     }
 }
 
 
 @include btn(yellow, rgb(242, 255, 0));
+@include btn(green, rgb(5, 191, 42), 10px, 50px);
+@include btn(blue, rgb(0, 55, 237), 10px, 100px);
+@include btn(purple, purple, 3px, 100px);
+
+// a {
+//     &:hover {
+//     color: #fff;
+//     }
+//     &:active {
+//     color: aqua;
+//     }
+//     &:before {
+//         content: '';
+//     }
+//     .box {
+//         width: 10px;
+//     }
+// }
 
 
-@include btn(green, rgb(5, 191, 42),10px, 50px);
+.box-wide {
+    width: 400px;
+    height: 130px;
+    background-color: rgb(40, 40, 40);
+    color: yellow;
+    transform: rotate(20deg);
+}
 
-@include btn(blue, rgb(0, 55, 237), 10px ,300px);
+.contents {
+    @extend .box-wide;
+    color: #fff;
+}
 
-@include btn(purple, purple, 20px, 400px);
+.op {
+    width: 100 + 100 + 300px;
+    height: 100px - 10;
+    font-size: 100px - 10 * 5px;
+    margin: (100 / 10) + px;
+    font: 16px / 24px;
+    color: #010203 * #040506;
+}
 
+
+
+
+@include bodysetting(18px);
+
+
+
+@for $i from 1 through 10 {
+
+    .boxfor-#{$i} {
+        width: $i * 10px;
+    }
+}
+
+@mixin edtor ($num) {
+    @for $i from 1 through $num {
+        .boxfor-#{$i} {
+            width: $i * 10px;
+        }
+    }
+}
+
+@include edtor(15);
+
+
+@mixin push-left($num) {
+    @for $i from 1 through $num {
+        .push-left-#{$i} {
+            margin-left: $i * 1px;
+        }
+    }
+}
+
+
+
+@mixin push-dir($dir, $num) {
+    @for $i from 1 through $num {
+        .push-#{$dir}-#{$i} {
+            margin-#{$dir}: $i * 1px;
+        }
+    }
+}
+
+
+
+@include push-left(1000);
+@include push-dir(top,300);
+@include push-dir(right,300);

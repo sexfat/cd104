@@ -17,3 +17,39 @@
     }
 }
 
+
+@mixin bodysetting ($fontbase) {
+    body {
+        font-size: $fontbase;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        h1 {
+            font-size: $fontbase * 4;
+        }
+
+        h2 {
+            font-size: $fontbase * 3;
+        }
+
+        h3 {
+            font-size: $fontbase * 2;
+        }
+
+        h4 {
+            font-size: floor($fontbase * 1.4);
+        }
+
+        h5 {
+            font-size: $fontbase * 1;
+        }
+
+        // span {
+        //     width: ceil(100.78px);
+        //     width: round(100.48px);
+        //     width: floor(100.78px);
+        // }
+
+
+    }
+}
+
