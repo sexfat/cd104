@@ -1,0 +1,67 @@
+@import "header";
+@import "var";
+@import "mixin";
+// @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+body {
+    font-size: $bodyfontsize;
+}
+
+//註解
+/*css註解*/
+
+// $os: true/false
+
+.box {
+    font-size: $num;
+    margin: 10px;
+    color: $color;
+}
+
+
+.box2 {
+    padding: $num;
+
+}
+
+.wrapper {
+    font-size: 10px;
+    padding-top: 10px;
+
+    .container {
+        margin-top: 10px;
+        background-color: $color;
+    }
+}
+
+
+.box-small {
+    @include margincenter();
+    height: 400px;
+
+    span {
+        padding: 10px;
+    }
+}
+
+.box-medium {
+    @include margincenter();
+    height: 800px;
+}
+
+
+body {
+    @include fontSize(18px);
+}
+
+@mixin margin($width:null, $left:null, $right:null) {
+    width:$width;
+    margin-left: $left;
+    margin-right: $right;
+}
+
+
+
+.content {
+    @include margin(10px,100px,1000px);
+}

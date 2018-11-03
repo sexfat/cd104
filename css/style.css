@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body {
+  font-size: 24px; }
+
+/*css註解*/
+.box {
+  font-size: 100px;
+  margin: 10px;
+  color: #e2c90f; }
+
+.box2 {
+  padding: 100px; }
+
+.wrapper {
+  font-size: 10px;
+  padding-top: 10px; }
+  .wrapper .container {
+    margin-top: 10px;
+    background-color: #e2c90f; }
+
+.box-small {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 400px; }
+  .box-small span {
+    padding: 10px; }
+
+.box-medium {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 800px; }
+
+body {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f20; }
+  body h1 {
+    font-size: 108px; }
+
+.content {
+  width: 10px;
+  margin-left: 100px;
+  margin-right: 1000px; }
