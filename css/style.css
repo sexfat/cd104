@@ -21,7 +21,6 @@ body {
 .box-small {
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
   height: 400px; }
   .box-small span {
     padding: 10px; }
@@ -29,7 +28,6 @@ body {
 .box-medium {
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
   height: 800px; }
 
 body {
@@ -43,3 +41,68 @@ body {
   width: 10px;
   margin-left: 100px;
   margin-right: 1000px; }
+
+.boxname {
+  width: 100px; }
+
+.btn-yellow {
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f2ff00;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f20; }
+  .btn-yellow h1 {
+    font-size: 120px; }
+
+.btn-green {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #05bf2a;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f20;
+  border-radius: 10px; }
+  .btn-green h1 {
+    font-size: 120px; }
+
+.btn-blue {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #0037ed;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f20;
+  border-radius: 10px; }
+  .btn-blue h1 {
+    font-size: 120px; }
+
+.btn-purple {
+  width: 400px;
+  height: 30px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: purple;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f20;
+  border-radius: 20px; }
+  .btn-purple h1 {
+    font-size: 120px; }

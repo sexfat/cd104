@@ -55,13 +55,47 @@ body {
 }
 
 @mixin margin($width:null, $left:null, $right:null) {
-    width:$width;
+    width: $width;
     margin-left: $left;
     margin-right: $right;
 }
 
-
-
 .content {
-    @include margin(10px,100px,1000px);
+    @include margin(10px, 100px, 1000px);
 }
+
+//跳脫符號
+@mixin boxs($name, $width) {
+    #{$name} {
+        width: $width;
+    }
+}
+
+@include boxs('.boxname', 100px);
+
+
+
+@mixin btn($colorName,$bgcolor ,$borderradius:null , $width:null) {
+    .btn-#{$colorName}{
+        width: $width;
+        height: 30px;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+        background-color:$bgcolor;
+        @include margincenter();
+        @include fontSize (20px);
+        border-radius: $borderradius;
+    }
+}
+
+
+@include btn(yellow, rgb(242, 255, 0));
+
+
+@include btn(green, rgb(5, 191, 42),10px, 50px);
+
+@include btn(blue, rgb(0, 55, 237), 10px ,300px);
+
+@include btn(purple, purple, 20px, 400px);
+
