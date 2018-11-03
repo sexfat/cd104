@@ -1,6 +1,10 @@
 @import "header";
 @import "var";
 @import "mixin";
+@import "desktop";
+@import "medium";
+
+
 // @import "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 body {
@@ -52,6 +56,7 @@ body {
 
 body {
     @include fontSize(18px);
+    background-color: rgb(0, 0, 0);
 }
 
 @mixin margin($width:null, $left:null, $right:null) {
@@ -123,12 +128,13 @@ body {
     height: 130px;
     background-color: rgb(40, 40, 40);
     color: yellow;
-    transform: rotate(20deg);
+    @include backlight(20px, 20px, 9, 10, rgb(0, 23, 150), rgb(146, 244, 9), 10);
 }
 
 .contents {
     @extend .box-wide;
     color: #fff;
+
 }
 
 .op {
@@ -183,8 +189,94 @@ body {
     }
 }
 
+// @include push-left(1000);
+// @include push-dir(top,300);
+// @include push-dir(right,300);
 
 
-@include push-left(1000);
-@include push-dir(top,300);
-@include push-dir(right,300);
+// .col-md-1 {
+//     width:  8.888%
+// }
+
+
+@mixin grid($num) {
+    @for $i from 1 through $num {
+        .col-md-#{$i} {
+            width: ($i / $num) *100%;
+        }
+    }
+
+}
+
+@include grid(12);
+
+$list : box1 box2 box3 grand boy;
+
+@each $pic in $list {
+    .img-#{$pic} {
+        background: url('images/#{$pic}.jpg')
+    }
+}
+
+@mixin ifelse($num) {
+    @if $num <=20 {
+        .boxif {
+            width: $num
+        }
+    }
+
+    @else {
+        .boxif {
+            width: ($num / 2);
+        }
+    }
+}
+
+
+
+
+@mixin theme ($theme) {
+    @if $theme==yellow {
+        body {
+            background-color: yellow;
+            @content;
+        }
+    }
+
+    @else if $theme==blue {
+        body {
+            background-color: blue;
+            @content;
+        }
+    }
+
+    @else if $theme==green {
+        body {
+            background-color: green;
+            @content;
+        }
+    }
+}
+
+@include ifelse(30);
+
+@include theme(yellow) {
+    font-size: 20px;
+    color: blue;
+
+    .wrapper {
+        @include margincenter();
+    }
+}
+
+;
+
+
+@include rwd(moblie) {
+
+    .wrapper {
+        width: 80%;
+    }
+
+}
+
