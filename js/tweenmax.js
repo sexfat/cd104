@@ -43,7 +43,7 @@ TweenMax.set('.box_05', {
 TweenMax.fromTo('.text', 1, {
     y: -150,
     opacity: 0
-},{
+}, {
     y: 0,
     opacity: 1,
     ease: Bounce.easeOut
@@ -52,10 +52,137 @@ TweenMax.fromTo('.text', 1, {
 
 TweenMax.fromTo('.line', 1, {
     width: 0,
-},{
+}, {
     width: 400,
     delay: .6
 })
+
+
+TweenMax.fromTo('.circle', 1, {
+    scale: 1,
+    opacity: 1
+}, {
+    scale: 1.5,
+    opacity: 0,
+    repeat: -1,
+    ease: Expo.easeOut
+
+});
+
+
+
+TweenMax.to('.inner', 1, {
+    scale: 1,
+    rotation: 360,
+    repeat: -1
+})
+
+TweenMax.to('.box_07', 1, {
+    x: 100,
+    repeat: -1,
+    repeatDelay: 2,
+    yoyo: true,
+    boxShadow: "0px 5px 20px black" //陰影
+
+
+
+})
+
+
+var btn_play = document.getElementById('play_btn');
+
+
+btn_play.onclick = function () {
+
+
+
+    TweenMax.to('.box_08', 6, {
+        bezier: {
+            curviness: 1.25,
+            values: [{
+                x: 0,
+                y: 10
+            }, {
+                x: 250,
+                y: 400
+            }, {
+                x: 450,
+                y: 50
+            }, {
+                x: 0,
+                y: 0
+            }],
+            autoRotate: true
+        },
+        ease: Power1.easeOut
+    });
+}
+
+function alerts(){
+    alert('ok');
+    // console.log("alertsok");
+   };
+
+// TweenMax.staggerTo('.section_02 .box', 1, {
+//     // scale: 1,
+//     // rotation: 360,
+//     repeat: 1,
+//     // repeatDelay: 5,
+//     // transformOrigin: 'left top'
+//     x: 100,
+//     // onComplete : alerts
+// },.6);
+
+
+var tl = new TimelineMax({
+   repeat: 1,
+   yoyo: true,
+   repeatDelay: 1,
+   onComplete : alerts
+});
+
+
+tl.add(TweenMax.to('.section_02 .box1', 2, {
+    x: 100
+}));
+
+
+tl.add(TweenMax.to('.section_02 .box2', 1, {
+    x: 100,
+    y: 100,
+    opacity: 0,
+    delay: -1
+}));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TweenMax.to('.box_07', 1, {
+//     scale: 1,
+//     rotation: 360,
+//     repeat: -1,
+//     repeatDelay: 0,
+//     transformOrigin : 'left top'
+
+// })
+
+
 
 
 

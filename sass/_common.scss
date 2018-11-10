@@ -2,6 +2,15 @@
     .section {
         width: 100vw;
         height: 100vh;
+        border-bottom: 1px solid #000;
 
     }
+}
+
+.btn {
+  width:100px;
+  height: 30px;
+  background-color: rgb(1, 255, 208);
+  text-align: center;
+  cursor: pointer;
 }
