@@ -1,0 +1,29 @@
+@import "var";
+@import "mixin";
+@import "reset";
+@import "desktop";
+@import "medium";
+@import "common";
+
+$num: 5;
+
+.wrapper {
+
+    @for $i from 1 through $num {
+        .section_0#{$i} {
+            background-color: adjust-hue(rgb(230, 254, 143), $i * 8);
+            // z-index: $num - $i;
+        }
+    }
+
+    .box {
+        width: 100px;
+        height: 50px;
+        background-color: rgb(255, 86, 86);
+
+    }
+
+    .box_01 {}
+    .box_02 {}
+
+}
