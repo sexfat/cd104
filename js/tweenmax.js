@@ -118,10 +118,10 @@ btn_play.onclick = function () {
     });
 }
 
-function alerts(){
-    alert('ok');
-    // console.log("alertsok");
-   };
+// function alerts() {
+//     alert('ok');
+//     // console.log("alertsok");
+// };
 
 // TweenMax.staggerTo('.section_02 .box', 1, {
 //     // scale: 1,
@@ -135,10 +135,10 @@ function alerts(){
 
 
 var tl = new TimelineMax({
-   repeat: 1,
-   yoyo: true,
-   repeatDelay: 1,
-   onComplete : alerts
+    repeat: 1,
+    yoyo: true,
+    repeatDelay: 1,
+    // onComplete: alerts
 });
 
 
@@ -151,11 +151,27 @@ tl.add(TweenMax.to('.section_02 .box2', 1, {
     x: 100,
     y: 100,
     opacity: 0,
-    delay: -1
+    // delay: -1
 }));
 
+// tl.seek(1.5);
 
 
+// var tls = new TimelineMax({
+//     repeat: 2
+// });
+
+tls.fromTo('.section_02 .box3', 1, {
+    x: 100
+}, {
+    x: 400,
+    rotation: 180
+}).fromTo('.section_02 .box4', 1, {
+    x: 50
+}, {
+    x: 200 ,
+    rotation: 360
+});
 
 
 
