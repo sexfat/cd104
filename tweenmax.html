@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,44 +8,60 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/tweenmax.css">
     <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
-    
+    <script src="node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js"></script>
+    <script src="node_modules/gsap/src/minified/plugins/TextPlugin.min.js"></script>
+    <script src="js/SplitText.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+
+
     <title>Document</title>
 </head>
+
 <body>
     <div class="wrapper">
+        <div id="btn_scroll" class="btn">scrollTo</div>
         <div class="section section_01">
-              <div id="play_btn" class="btn">play </div>
-             <div class="box box_01"></div>
-             <div class="box box_02"></div>
-             <div class="box box_03">03</div>
-             <div class="box box_04">04</div>
-             <div class="box box_05">05</div>
-             <div class="box box_06">06</div>
-             <div class="box box_07">07</div>
-             <div class="box box_08">08</div>
-             <div class="box text">GreenSock</div>
-             <div class="line"></div>
-             <div class="circle"></div>
-             <div class="inner">10</div>
+            <div id="play_btn" class="btn">play </div>
+            <div class="box box_01"></div>
+            <div class="box box_02"></div>
+            <div class="box box_03">03</div>
+            <div class="box box_04">04</div>
+            <div class="box box_05">05</div>
+            <div class="box box_06">06</div>
+            <div class="box box_07">07</div>
+            <div class="box box_08">08</div>
+            <div class="box text">GreenSock</div>
+            <div class="line"></div>
+            <div class="circle"></div>
+            <div class="inner">10</div>
 
 
 
         </div>
         <div class="section section_02">
-       <div class="box box1"></div>
-       <div class="box box2"></div>
-       <div class="box box3"></div>
-       <div class="box box4"></div>
-       <div class="box box5"></div>
+            <div class="box box1"></div>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+            <div class="box box4"></div>
+            <div class="box box5"></div>
         </div>
         <div class="section section_03">
-               
+            <div class="textbox"></div>
         </div>
-            <div class="section section_04">
-            
-                </div>    
+        <div id="archor"></div>
+        <div class="section section_04">
+             <div id="textbox2">
+                    SplitText is an easy to use JavaScript utility that allows you to split HTML text into characters, words and lines. Its easy to use, extremely flexible and works all the way back to IE8. Although SplitText is naturally a good fit for creating HTML5 text animation effects with GreenSock's animation tools, it has no dependencies on GSAP, jQuery or any other libraries.
+             </div> 
+        </div>
+       
+        <div id="parallax_box" class="section section_05" data-hover-only="true">
+            <div class="box parallax_01" data-depth="0.5"></div>
+            <div class="box parallax_02" data-depth="0.7"></div>
+        </div>
     </div>
-    
+
 </body>
 <script src="js/tweenmax.js"></script>
+
 </html>

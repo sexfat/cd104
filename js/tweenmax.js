@@ -157,9 +157,9 @@ tl.add(TweenMax.to('.section_02 .box2', 1, {
 // tl.seek(1.5);
 
 
-// var tls = new TimelineMax({
-//     repeat: 2
-// });
+var tls = new TimelineMax({
+    repeat: 2
+});
 
 tls.fromTo('.section_02 .box3', 1, {
     x: 100
@@ -169,11 +169,73 @@ tls.fromTo('.section_02 .box3', 1, {
 }).fromTo('.section_02 .box4', 1, {
     x: 50
 }, {
-    x: 200 ,
+    x: 200,
     rotation: 360
 });
 
 
+document.getElementById('btn_scroll').onclick = function () {
+    TweenMax.to(window, 1, {
+        scrollTo: {
+            y: "#archor",
+            offsetY: 10
+        }
+    })
+}
+
+var tis = new TimelineMax({
+    repeat:-1,
+    yoyo: false,
+    repeatDelay: 3
+});
+
+tis.to('.textbox', 3, {
+    text: "我的天呀  要記得存檔",
+    ease: Expo.easeOut,
+    delay: 4
+}).to('.textbox', 1, {
+    text: "要記得吃午餐",
+    ease: Linear.easeNone,
+    delay: 2
+});
+
+
+
+
+
+var textsplit = new SplitText('#textbox2' ,{
+    type: "words , chars"
+});
+
+TweenLite.set("#textbox2", {
+    perspective: 400
+});
+TweenMax.staggerFrom(textsplit.chars,1,{
+    opacity: 0,
+    scale: 0,
+    y: 80,
+    rotationX: 180,
+    transformOrigin: "0% 50% -50",
+    ease: Back.easeOut
+},0.1);
+
+
+function parallax(){
+ var scene  = document.getElementById('parallax_box');
+ var parallax = new Parallax(scene);
+}
+
+
+parallax();
+
+
+
+
+
+
+
+
+console.log('end ok')
 
 
 
