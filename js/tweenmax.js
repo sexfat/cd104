@@ -310,6 +310,38 @@ var tlts = new TimelineMax();
 
 
 
+  var tlimax = new TimelineMax();
+
+  tlimax.fromTo('.bgall01' , 1, {
+      x:"-100%"
+  },{
+      x: '0%'
+  }).fromTo('.bgall02' , 1, {
+    x:"100%"
+},{
+    x: '0%'
+}).fromTo('.bgall03' , 1, {
+    y:"-100%"
+},{
+    y: '0%'
+})
+
+
+
+
+
+var scene_sce = new ScrollMagic.Scene({
+    triggerElement: "#trigger_05",
+    duration: '300%',
+    //畫面最上緣
+    triggerHook: 0,
+    //只出現一次
+    // reverse: false,
+})
+.setPin('.section_10')
+.setTween(tlimax)
+.addIndicators()
+.addTo(controller);
 
 
 
