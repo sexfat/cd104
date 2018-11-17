@@ -266,13 +266,47 @@ var section_07 = new ScrollMagic.Scene({
 
 
 
+var trll = TweenMax.to('.trllbox' ,1 ,{
+    x: 200,
+    delay: 0
+})
+
 var section_08 = new ScrollMagic.Scene({
     triggerElement: "#trigger_03",
     // duration: '80%',
     // offset: 40,
     // reverse: true,
-}).setClassToggle('.bgall' ,'on')
+}).setClassToggle('.bgall' ,'on').setTween(trll)
 .addIndicators().addTo(controller)
+
+
+var tlts = new TimelineMax();
+
+    tlts.add(TweenMax.to('.scrollbox_01', 1, {
+        x: 200,
+    }));
+    tlts.add(TweenMax.to('.scrollbox_02', 1, {
+        x: 300,
+    }));
+    tlts.add(TweenMax.to('.scrollbox_03', 1, {
+        x: 400,
+    }));
+
+
+    var scene_s = new ScrollMagic.Scene({
+        triggerElement: "#trigger_04",
+        duration: '300%',
+        //畫面最上緣
+        triggerHook: 0,
+        //只出現一次
+        // reverse: false,
+    })
+    .setPin('.section_09')
+    .setTween(tlts)
+    .addIndicators({
+        name: 'stickview'
+    })
+    .addTo(controller);
 
 
 
