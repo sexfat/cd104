@@ -184,7 +184,7 @@ document.getElementById('btn_scroll').onclick = function () {
 }
 
 var tis = new TimelineMax({
-    repeat:-1,
+    repeat: -1,
     yoyo: false,
     repeatDelay: 3
 });
@@ -203,30 +203,77 @@ tis.to('.textbox', 3, {
 
 
 
-var textsplit = new SplitText('#textbox2' ,{
+var textsplit = new SplitText('#textbox2', {
     type: "words , chars"
 });
 
 TweenLite.set("#textbox2", {
     perspective: 400
 });
-TweenMax.staggerFrom(textsplit.chars,1,{
+TweenMax.staggerFrom(textsplit.chars, 1, {
     opacity: 0,
     scale: 0,
     y: 80,
     rotationX: 180,
     transformOrigin: "0% 50% -50",
     ease: Back.easeOut
-},0.1);
+}, 0.1);
 
 
-function parallax(){
- var scene  = document.getElementById('parallax_box');
- var parallax = new Parallax(scene);
+function parallax() {
+    var scene = document.getElementById('parallax_box');
+    var parallax = new Parallax(scene);
 }
 
 
 parallax();
+
+//scrollmagic
+//初始化場景
+var controller = new ScrollMagic.Controller();
+
+
+
+var animation = TweenMax.to('.scroll_box', 1, {
+    y: 300
+});
+
+
+var animation01 = TweenMax.to('.scroll_boxs', 1, {
+    y: 500,
+    x: 100
+});
+
+
+//觸發事件
+var section_06 = new ScrollMagic.Scene({
+    triggerElement: "#trigger_01",
+    duration: '80%',
+    offset: 40,
+    // reverse: true,
+}).setTween(animation).addIndicators({
+    name: 'section01'
+}).addTo(controller)
+
+
+var section_07 = new ScrollMagic.Scene({
+    triggerElement: "#trigger_02",
+    // duration: '80%',
+    // offset: 40,
+    // reverse: true,
+}).setClassToggle('.toggleclass' ,'on')
+.addIndicators().addTo(controller)
+
+
+
+var section_08 = new ScrollMagic.Scene({
+    triggerElement: "#trigger_03",
+    // duration: '80%',
+    // offset: 40,
+    // reverse: true,
+}).setClassToggle('.bgall' ,'on')
+.addIndicators().addTo(controller)
+
 
 
 
