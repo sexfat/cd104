@@ -344,6 +344,49 @@ var scene_sce = new ScrollMagic.Scene({
 .addTo(controller);
 
 
+var para01 = TweenMax.to('.box_parallax-01', 1, {
+    y: '60%' ,
+    ease: Power1.easeOut 
+})
+
+var para02 = TweenMax.to('.box_parallax-02', 1 ,{
+    y: '90%',
+    ease: Power1.easeOut 
+})
+var para03 =  TweenMax.to('.box_parallax-03', 1,{
+    y:'-20%',
+    ease: Power1.easeOut
+})
+
+var scrollbg = TweenMax.to('.section_11 .wrapper', 1,{
+    y:'-15%',
+    ease: Power1.easeOut
+})
+
+// function enterlog() {
+// console.log('enter');
+// };
+
+// function leavelog() {
+//     console.log('leave');
+// };
+
+
+var scene_ogs = new ScrollMagic.Scene({
+    triggerElement: "#trigger_06",
+    duration: '100%'
+    //畫面最上緣
+    // triggerHook: 0,
+    //只出現一次
+    // reverse: false,
+})
+.setTween([para01,para02,para03,scrollbg])
+.addIndicators()
+.addTo(controller);
+
+
+
+
 
 
 
